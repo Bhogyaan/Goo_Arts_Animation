@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  
+}
+
+#wrapper {
+  width: 100%;
+  max-width: 964px;
+  position: relative;
+}
+
+#carousel {
+  overflow: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+#carousel::-webkit-scrollbar {
+  height: 0;
+}
+ .prev:hover,
+.next:hover{
+  transform: scale(1.3);
+}
+
+.prev{
+  position:fixed;
+  color:#f70909;
+  top:48%;
+  left:10%;
+  width: 40px;
+  height:40px;
+  z-index:1;
+  /* border:2px solid #fff; */
+  /* padding:10px 17px; */
+   border-radius:100%;
+  transition:0.2s ease-in-out;
+  cursor:pointer;
+  box-shadow:0px 2px 15px rgba(0, 0, 0, 0.9);
+}
+ .next{
+  position:fixed;
+  color:#fd0404;
+  top:48%;
+  right:10%;
+  z-index:1;
+  width: 40px;
+  height:40px;
+  /* border:2px solid #fff;
+  padding:10px 17px; */
+   border-radius:50%;
+  transition:0.2s ease-in-out;
+  cursor:pointer;
+  box-shadow:0px 2px 15px rgba(0, 0, 0, 0.9);
+}
+
+/* #prev,
+#next {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background: white;
+  border: none;
+  padding: 25px;
+  border-radius: 50%;
+  outline: 0;
+  cursor: pointer;
+  position: absolute;
+} */
+/* 
+#prev {
+  top: 50%;
+  left: 0;
+  transform: translate(50%, -50%);
+  display: none;
+  color: #000;
+}
+
+#next {
+  top: 50%;
+  right: 0;
+  transform: translate(-50%, -50%);
+}
+ */
+#content {
+  display: grid;
+  grid-gap: 16px;
+  grid-auto-flow: column;
+  margin: auto;
+  box-sizing: border-box;
+}
+
+.item {
+  width: 180px;
+  height: 180px;
+  /* background: green; */
+}
+button:hover{
+    box-shadow: white;
+}
+
+</style>
+<body>
+  <div id="wrapper">
+    <div id="carousel">
+      <div id="content">
+        <img class="item" src="images/a.jpg" />
+        <img class="item" src="images/a.jpg" />
+        <img class="item" src="images/a.jpg" />
+        <img class="item" src="images/a.jpg" />
+        <img class="item" src="images/b.jpg" />
+        <img class="item" src="images/a.jpg" />
+        <img class="item" src="images/a.jpg" />
+        <img class="item" src="images/a.jpg" />
+        <img class="item" src="images/a.jpg" />
+        <img class="item" src="images/a.jpg" />
+        <img class="item" src="images/a.jpg" />
+        <img class="item" src="images/a.jpg" />
+        <img class="item" src="images/a.jpg" />
+        <img class="item" src="images/a.jpg" />
+        <img class="item" src="images/a.jpg" />
+        
+      </div>
+    </div>
+    
+    <svg class="prev" id="prev" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M48 256a208 208 0 1 1 416 0A208 208 0 1 1 48 256zm464 0A256 256 0 1 0 0 256a256 256 0 1 0 512 0zM217.4 376.9c4.2 4.5 10.1 7.1 16.3 7.1c12.3 0 22.3-10 22.3-22.3V304h96c17.7 0 32-14.3 32-32V240c0-17.7-14.3-32-32-32H256V150.3c0-12.3-10-22.3-22.3-22.3c-6.2 0-12.1 2.6-16.3 7.1L117.5 242.2c-3.5 3.8-5.5 8.7-5.5 13.8s2 10.1 5.5 13.8l99.9 107.1z"/></svg>
+
+    <svg class="next" id="next" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M464 256A208 208 0 1 1 48 256a208 208 0 1 1 416 0zM0 256a256 256 0 1 0 512 0A256 256 0 1 0 0 256zM294.6 135.1c-4.2-4.5-10.1-7.1-16.3-7.1C266 128 256 138 256 150.3V208H160c-17.7 0-32 14.3-32 32v32c0 17.7 14.3 32 32 32h96v57.7c0 12.3 10 22.3 22.3 22.3c6.2 0 12.1-2.6 16.3-7.1l99.9-107.1c3.5-3.8 5.5-8.7 5.5-13.8s-2-10.1-5.5-13.8L294.6 135.1z"/></svg>
+
+    <!-- <i class="fa fa-angle-right next" id="next"></i> -->
+  </div>
+</body>
+
+<script>
+    const gap = 10;
+
+const carousel = document.getElementById("carousel"),
+  content = document.getElementById("content"),
+  next = document.getElementById("next"),
+  prev = document.getElementById("prev");
+
+next.addEventListener("click", e => {
+  carousel.scrollBy(width + gap, 0);
+  if (carousel.scrollWidth !== 0) {
+    prev.style.display = "flex";
+  }
+  if (content.scrollWidth - width - gap <= carousel.scrollLeft + width) {
+    next.style.display = "none";
+  }
+});
+prev.addEventListener("click", e => {
+  carousel.scrollBy(-(width + gap), 0);
+  if (carousel.scrollLeft - width - gap <= 0) {
+    prev.style.display = "none";
+  }
+  if (!content.scrollWidth - width - gap <= carousel.scrollLeft + width) {
+    next.style.display = "flex";
+  }
+});
+
+let width = carousel.offsetWidth;
+window.addEventListener("resize", e => (width = carousel.offsetWidth));
+
+</script>
+
+</html>
